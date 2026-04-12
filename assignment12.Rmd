@@ -1,0 +1,56 @@
+---
+title: "My R Markdown Primer"
+author: "Miguel A"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Introduction
+
+R Markdown is a document format that allows users to combine narrative text, R code, and mathematical expressions into a single file. It is widely used for reproducible research because it keeps both the analysis and the explanation together. This ensures that anyone can rerun the code and verify the results.
+
+# Narrative Section
+
+One major advantage of R Markdown is that it integrates writing and computation. Instead of writing a report separately and copying results, users can embed code directly into the document. When the document is knitted, the output is automatically generated and displayed. This makes the workflow more efficient and reduces the chances of errors.
+
+# Math in R Markdown
+
+R Markdown supports LaTeX math formatting. For example, an inline equation looks like this: $\alpha + \beta = \gamma$.
+
+A displayed equation is shown below:
+
+$$
+y = mx + b
+$$
+
+These features are useful when working with formulas or statistical models.
+
+# Code Chunk 1: Load Data and Summary
+
+```{r}
+library(ggplot2)
+data(mtcars)
+
+summary(mtcars)
+```
+
+The summary above provides descriptive statistics such as mean, median, minimum, and maximum values for each variable in the dataset.
+
+# Code Chunk 2: Visualization
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(
+    title = "Car Weight vs. Miles Per Gallon",
+    x = "Weight",
+    y = "Miles Per Gallon"
+  )
+```
+
+This plot shows a negative relationship between weight and fuel efficiency, indicating that heavier cars tend to have lower miles per gallon.
+
+Reflection
+R Markdown was different from what I’m used to because it combines writing and code in one place. I liked that I could run code and immediately see the results in the document. It made everything feel more organized.
+
+The hardest part was getting the formatting right. Small mistakes would stop the file from knitting, but once I fixed those, it worked smoothly.
